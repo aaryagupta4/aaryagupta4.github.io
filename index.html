@@ -16,97 +16,153 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="home">
-    <nav class="nav" aria-label="Primary">
-      <a class="nav-brand" href="/">Aarya Gupta</a>
-      <ul class="nav-links">
-        <li><a href="./writing.html">writing</a></li>
-        <li><a href="./projects.html">projects</a></li>
-        <li><a href="./about.html">about</a></li>
-      </ul>
-    </nav>
+  <body class="home cosmos">
+    <canvas id="star-bg" aria-hidden="true"></canvas>
 
-    <main class="home-main">
-      <section class="home-hero">
-        <p class="loc">Blacksburg, Virginia</p>
-        <h1>Aarya Gupta</h1>
-        <p class="tagline">
-          Computer engineer, sophomore at Virginia Tech. Currently at
-          <a class="lnk" href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>
-          (YC&nbsp;W25) working on evaluation for computer-use agents.
-          Before that, compliance analysis with
-          <a class="lnk" href="./projects.html#spade">Team Astra</a>
-          at VT Aerospace.
-        </p>
-        <p class="tagline">
-          I write essays about agent evaluation, build tools for
-          myself, and play violin badly enough to have opinions about
-          tuners. Interested in the seam between systems and
-          intelligence &mdash; aerospace, ML infrastructure, and things
-          you can point a scope at.
-        </p>
-      </section>
+    <div class="corner-brand">
+      <p class="corner-eyebrow">a personal atlas</p>
+      <h1 class="corner-name">Aarya Gupta</h1>
+      <p class="corner-loc">Blacksburg, Virginia &middot; Virginia Tech &middot; CompE &rsquo;28</p>
+    </div>
 
-      <section class="home-picks">
-        <h2 class="picks-h">Selected</h2>
-        <ul class="picks">
-          <li>
-            <a href="https://refresh.dev/blog/trajectories-blog-post" target="_blank" rel="noopener">
-              <span class="pick-title">Notes on trajectories.sh</span>
-              <span class="pick-meta">essay &middot; refresh.dev &middot; 2026</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">
-              <span class="pick-title">On evaluating computer-use agents</span>
-              <span class="pick-meta">essay &middot; refresh.dev &middot; 2026</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://refresh.dev/blog/computer-1" target="_blank" rel="noopener">
-              <span class="pick-title">Introducing computer&#8209;1</span>
-              <span class="pick-meta">essay &middot; refresh.dev &middot; 2026</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://aaryagupta4.github.io/open-strings/" target="_blank" rel="noopener">
-              <span class="pick-title">Open&nbsp;Strings &mdash; a violin tuner</span>
-              <span class="pick-meta">tool &middot; WebAudio &middot; hand-written YIN</span>
-            </a>
-          </li>
-        </ul>
-      </section>
+    <a href="#below" class="scroll-hint" aria-label="Scroll for more">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 L12 20 M6 14 L12 20 L18 14" /></svg>
+    </a>
 
-      <section class="home-links">
-        <div>
-          <p class="linklabel">Explore</p>
-          <ul>
-            <li><a href="./writing.html">Writing &rarr;</a></li>
-            <li><a href="./projects.html">Projects &rarr;</a></li>
-            <li><a href="./about.html">About &rarr;</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="linklabel">Elsewhere</p>
-          <ul>
-            <li><a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">GitHub &rarr;</a></li>
-            <li><a href="https://www.linkedin.com/in/aarya-gupta-929689379" target="_blank" rel="noopener">LinkedIn &rarr;</a></li>
-            <li><a href="./resume.pdf">Résumé &rarr;</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="linklabel">Say hello</p>
-          <ul>
-            <li><a href="mailto:aaryasgupta@gmail.com" class="mono-lnk">aaryasgupta@gmail.com</a></li>
-          </ul>
-        </div>
-      </section>
+    <!-- HERO CONSTELLATION -->
+    <main class="cosmos-hero" aria-label="Constellation navigation">
+      <svg viewBox="0 0 1000 620" class="hero-svg" id="hero-constellation" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <radialGradient id="star-glow-red" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#d97070" stop-opacity="0.6" />
+            <stop offset="60%" stop-color="#d97070" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#d97070" stop-opacity="0" />
+          </radialGradient>
+          <radialGradient id="star-glow-amber" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#e4b96a" stop-opacity="0.55" />
+            <stop offset="60%" stop-color="#e4b96a" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#e4b96a" stop-opacity="0" />
+          </radialGradient>
+          <radialGradient id="star-glow-sage" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#9cb597" stop-opacity="0.55" />
+            <stop offset="60%" stop-color="#9cb597" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#9cb597" stop-opacity="0" />
+          </radialGradient>
+          <radialGradient id="star-glow-purple" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#a89ee8" stop-opacity="0.55" />
+            <stop offset="60%" stop-color="#a89ee8" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#a89ee8" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- constellation lines (connect the four sections into a shape) -->
+        <g class="c-lines">
+          <line x1="240" y1="180" x2="500" y2="140" />
+          <line x1="500" y1="140" x2="770" y2="220" />
+          <line x1="770" y1="220" x2="620" y2="440" />
+          <line x1="620" y1="440" x2="320" y2="430" />
+          <line x1="320" y1="430" x2="240" y2="180" />
+        </g>
+
+        <!-- 4 nav stars -->
+        <a href="./writing.html" class="nav-star hue-red">
+          <circle cx="240" cy="180" r="60" fill="url(#star-glow-red)" class="glow" />
+          <circle cx="240" cy="180" r="9" class="core" />
+          <text x="240" y="220" class="label">Writing</text>
+          <text x="240" y="238" class="sublabel">essays &middot; a constellation</text>
+        </a>
+
+        <a href="./projects.html" class="nav-star hue-amber">
+          <circle cx="500" cy="140" r="70" fill="url(#star-glow-amber)" class="glow" />
+          <circle cx="500" cy="140" r="12" class="core" />
+          <text x="500" y="184" class="label">Projects</text>
+          <text x="500" y="202" class="sublabel">Open Strings &middot; SPADE</text>
+        </a>
+
+        <a href="./about.html" class="nav-star hue-sage">
+          <circle cx="770" cy="220" r="60" fill="url(#star-glow-sage)" class="glow" />
+          <circle cx="770" cy="220" r="9" class="core" />
+          <text x="770" y="260" class="label">About</text>
+          <text x="770" y="278" class="sublabel">music &middot; tennis &middot; places</text>
+        </a>
+
+        <a href="mailto:aaryasgupta@gmail.com" class="nav-star hue-purple">
+          <circle cx="620" cy="440" r="52" fill="url(#star-glow-purple)" class="glow" />
+          <circle cx="620" cy="440" r="8" class="core" />
+          <text x="620" y="478" class="label">Contact</text>
+          <text x="620" y="496" class="sublabel">aaryasgupta@gmail.com</text>
+        </a>
+
+        <!-- 5th "dim" star: résumé -->
+        <a href="./resume.pdf" class="nav-star hue-red dim">
+          <circle cx="320" cy="430" r="42" fill="url(#star-glow-red)" class="glow" />
+          <circle cx="320" cy="430" r="5" class="core" />
+          <text x="320" y="466" class="label">Résumé</text>
+          <text x="320" y="484" class="sublabel">pdf</text>
+        </a>
+
+        <!-- readout: appears on hover -->
+        <text x="500" y="580" class="readout-hint" id="readout-hint">
+          Hover a star, or click to travel.
+        </text>
+      </svg>
     </main>
 
-    <footer class="foot">
-      <span class="fleuron">&#10086;</span>
-      <p>Set in EB Garamond and Inter. Blacksburg, Virginia.</p>
-    </footer>
+    <!-- BELOW-THE-FOLD content, glimpseable once you scroll -->
+    <section class="below" id="below">
+      <div class="below-inner">
+        <p class="below-eyebrow">Presently</p>
+        <p class="below-copy">
+          At <a class="lnk" href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>
+          (YC&nbsp;W25), authoring computer-use benchmarks and writing
+          engineering essays. Before that: compliance &amp; safety
+          analysis with a seven-person team at VT Aerospace on the
+          <a class="lnk" href="./projects.html#spade">SPADE</a> device.
+          Interested in the seam between systems and intelligence.
+        </p>
+
+        <div class="below-picks">
+          <p class="picks-h">Selected</p>
+          <ul class="picks">
+            <li>
+              <a href="https://refresh.dev/blog/trajectories-blog-post" target="_blank" rel="noopener">
+                <span class="pick-title">Notes on trajectories.sh</span>
+                <span class="pick-meta">essay &middot; refresh.dev</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">
+                <span class="pick-title">On evaluating computer-use agents</span>
+                <span class="pick-meta">essay &middot; refresh.dev</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://refresh.dev/blog/computer-1" target="_blank" rel="noopener">
+                <span class="pick-title">Introducing computer&#8209;1</span>
+                <span class="pick-meta">essay &middot; refresh.dev</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://aaryagupta4.github.io/open-strings/" target="_blank" rel="noopener">
+                <span class="pick-title">Open Strings</span>
+                <span class="pick-meta">tool &middot; browser violin tuner</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="below-elsewhere">
+          <a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">GitHub</a>
+          <span class="dot">·</span>
+          <a href="https://www.linkedin.com/in/aarya-gupta-929689379" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="dot">·</span>
+          <a href="mailto:aaryasgupta@gmail.com">Email</a>
+          <span class="dot">·</span>
+          <a href="./resume.pdf">Résumé</a>
+        </div>
+      </div>
+    </section>
 
     <script src="./script.js" defer></script>
   </body>

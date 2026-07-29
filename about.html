@@ -23,115 +23,237 @@
       </ul>
     </nav>
 
+    <a class="corner-constellation" href="./" title="home">
+      <svg viewBox="0 0 100 100">
+        <g class="cc-lines">
+          <line x1="30" y1="30" x2="65" y2="25" />
+          <line x1="65" y1="25" x2="80" y2="55" />
+          <line x1="80" y1="55" x2="55" y2="75" />
+          <line x1="55" y1="75" x2="30" y2="30" />
+        </g>
+        <g class="cc-star hue-red"><circle cx="30" cy="30" r="3" /></g>
+        <g class="cc-star hue-amber"><circle cx="65" cy="25" r="3.5" /></g>
+        <g class="cc-star hue-sage"><circle cx="80" cy="55" r="3" /></g>
+        <g class="cc-star hue-purple"><circle cx="55" cy="75" r="2.5" /></g>
+      </svg>
+      <span class="cc-label">← Home</span>
+    </a>
+
     <main class="page">
       <header class="page-head">
         <p class="crumb"><a href="./">home</a> &nbsp;/&nbsp; about</p>
         <h1>About</h1>
       </header>
 
-      <section class="prose">
-        <p>
-          I&rsquo;m a rising sophomore in Computer Engineering at
-          Virginia Tech, from Chicago. I write essays about agent
-          evaluation, build small tools when the ones that exist aren&rsquo;t
-          good enough, and think a lot about how to measure whether AI
-          systems are doing what we say they&rsquo;re doing.
-        </p>
-        <p>
-          Right now that means <a class="lnk" href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>,
-          where I&rsquo;m authoring benchmark tasks and writing the
-          engineering blog. Before that I did compliance and safety
-          analysis with a seven-person team at VT Aerospace on an
-          instrument called SPADE. The through-line is a taste for the
-          messy space between systems and intelligence &mdash; aerospace,
-          ML infrastructure, and things you can point a scope at.
-        </p>
+      <section class="about-hero">
+        <div class="prose">
+          <p>
+            I&rsquo;m a rising sophomore in Computer Engineering at
+            Virginia Tech, from Chicago. I write essays about agent
+            evaluation, build small tools when the ones that exist
+            aren&rsquo;t good enough, and think a lot about how to
+            measure whether AI systems are doing what we say they&rsquo;re
+            doing.
+          </p>
+          <p>
+            Right now that means <a class="lnk" href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>,
+            where I&rsquo;m authoring benchmark tasks and writing the
+            engineering blog. Before that: compliance and safety
+            analysis with a seven-person team at VT Aerospace on an
+            instrument called SPADE. The through-line is a taste for the
+            messy space between systems and intelligence &mdash;
+            aerospace, ML infrastructure, and things you can point a
+            scope at.
+          </p>
+        </div>
+        <div class="about-illus">
+          <!-- hand-drawn 'atlas rose' — placeholder for a real headshot -->
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#b93b3b" stroke-width="1"/>
+            <circle cx="50" cy="50" r="34" fill="none" stroke="#d18a2a" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <circle cx="50" cy="50" r="24" fill="none" stroke="#6b5bd6" stroke-width="0.4" stroke-dasharray="1 3"/>
+            <line x1="50" y1="8" x2="50" y2="92" stroke="#4d7a58" stroke-width="0.5"/>
+            <line x1="8" y1="50" x2="92" y2="50" stroke="#4d7a58" stroke-width="0.5"/>
+            <path d="M50 12 L54 50 L50 88 L46 50 Z" fill="#b93b3b" opacity="0.8"/>
+            <path d="M12 50 L50 54 L88 50 L50 46 Z" fill="#d18a2a" opacity="0.5"/>
+            <text x="50" y="6" font-family="EB Garamond" font-style="italic" font-size="6" fill="#b93b3b" text-anchor="middle">N</text>
+            <text x="50" y="99" font-family="EB Garamond" font-style="italic" font-size="6" fill="#b93b3b" text-anchor="middle">S</text>
+            <text x="97" y="52" font-family="EB Garamond" font-style="italic" font-size="6" fill="#b93b3b" text-anchor="middle">E</text>
+            <text x="4" y="52" font-family="EB Garamond" font-style="italic" font-size="6" fill="#b93b3b" text-anchor="middle">W</text>
+            <circle cx="50" cy="50" r="3" fill="#b93b3b"/>
+          </svg>
+        </div>
       </section>
 
       <section class="tabs-section">
         <div class="tabs" role="tablist" aria-label="About sections">
-          <button class="tab is-active" role="tab" data-tab="music" aria-selected="true">Music</button>
-          <button class="tab" role="tab" data-tab="tennis" aria-selected="false">Tennis</button>
-          <button class="tab" role="tab" data-tab="sweets" aria-selected="false">Sweet tooth</button>
-          <button class="tab" role="tab" data-tab="places" aria-selected="false">Elsewhere</button>
-          <button class="tab" role="tab" data-tab="now" aria-selected="false">Right now</button>
+          <button class="tab is-active" role="tab" data-tab="music" aria-selected="true">
+            <span class="tab-icon"><svg viewBox="0 0 20 20"><circle cx="6" cy="14" r="3"/><line x1="9" y1="14" x2="9" y2="3"/><line x1="9" y1="3" x2="16" y2="5"/><line x1="16" y1="5" x2="16" y2="13"/><circle cx="13" cy="13" r="3"/></svg></span>
+            Music
+          </button>
+          <button class="tab" role="tab" data-tab="tennis" aria-selected="false">
+            <span class="tab-icon"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M3 10 Q10 4, 17 10 M3 10 Q10 16, 17 10"/></svg></span>
+            Tennis
+          </button>
+          <button class="tab" role="tab" data-tab="sweets" aria-selected="false">
+            <span class="tab-icon"><svg viewBox="0 0 20 20"><path d="M4 10 Q4 4, 10 4 Q16 4, 16 10 L16 14 L4 14 Z"/><line x1="7" y1="14" x2="7" y2="18"/><line x1="13" y1="14" x2="13" y2="18"/></svg></span>
+            Sweet tooth
+          </button>
+          <button class="tab" role="tab" data-tab="places" aria-selected="false">
+            <span class="tab-icon"><svg viewBox="0 0 20 20"><path d="M10 2 C 5 2, 3 6, 3 9 C 3 14, 10 18, 10 18 C 10 18, 17 14, 17 9 C 17 6, 15 2, 10 2 Z"/><circle cx="10" cy="9" r="2.5"/></svg></span>
+            Elsewhere
+          </button>
+          <button class="tab" role="tab" data-tab="now" aria-selected="false">
+            <span class="tab-icon"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><line x1="10" y1="10" x2="10" y2="5"/><line x1="10" y1="10" x2="14" y2="12"/></svg></span>
+            Right now
+          </button>
         </div>
 
         <div class="panels">
-          <div class="panel is-active" data-panel="music">
-            <dl class="def">
-              <dt>on repeat</dt>
-              <dd>&lsquo;Furthest Thing&rsquo; &mdash; Drake</dd>
-              <dt>in rotation</dt>
-              <dd>Natalie Jinju, Laufey</dd>
-              <dt>currently practicing (violin)</dt>
-              <dd>Bruch, Violin Concerto No.&nbsp;1 in G minor, Op.&nbsp;26</dd>
-              <dt>the piece I return to</dt>
-              <dd>Tchaikovsky, Serenade for Strings in C</dd>
-              <dt>era of choice</dt>
-              <dd>Romantic &mdash; Rachmaninoff above all. The music of ascending.</dd>
-              <dt>genres</dt>
-              <dd>r&amp;b &middot; indie pop &middot; rap</dd>
-              <dt>listen along</dt>
-              <dd><a class="lnk" href="https://open.spotify.com/user/wr4onvbwpnmtxewefnymsworw" target="_blank" rel="noopener">Spotify &rarr;</a></dd>
-            </dl>
+          <div class="panel-card is-active" data-panel="music">
+            <div class="panel-body">
+              <dl class="def">
+                <dt>on repeat</dt>
+                <dd>&lsquo;Furthest Thing&rsquo; &mdash; Drake</dd>
+                <dt>in rotation</dt>
+                <dd>Natalie Jinju, Laufey</dd>
+                <dt>currently practicing (violin)</dt>
+                <dd>Bruch, Violin Concerto No.&nbsp;1 in G minor, Op.&nbsp;26</dd>
+                <dt>the piece I return to</dt>
+                <dd>Tchaikovsky, Serenade for Strings in C</dd>
+                <dt>era of choice</dt>
+                <dd>Romantic &mdash; Rachmaninoff above all. The music of ascending.</dd>
+                <dt>genres</dt>
+                <dd>r&amp;b &middot; indie pop &middot; rap</dd>
+                <dt>listen along</dt>
+                <dd><a class="lnk" href="https://open.spotify.com/user/wr4onvbwpnmtxewefnymsworw" target="_blank" rel="noopener">Spotify &rarr;</a></dd>
+              </dl>
+            </div>
+            <div class="panel-illus">
+              <!-- sheet music snippet -->
+              <svg viewBox="0 0 100 100">
+                <line x1="10" y1="30" x2="90" y2="30" stroke="#1a2d5a" stroke-width="0.6"/>
+                <line x1="10" y1="40" x2="90" y2="40" stroke="#1a2d5a" stroke-width="0.6"/>
+                <line x1="10" y1="50" x2="90" y2="50" stroke="#1a2d5a" stroke-width="0.6"/>
+                <line x1="10" y1="60" x2="90" y2="60" stroke="#1a2d5a" stroke-width="0.6"/>
+                <line x1="10" y1="70" x2="90" y2="70" stroke="#1a2d5a" stroke-width="0.6"/>
+                <path d="M12 20 Q 18 25, 15 32 Q 12 40, 18 45 Q 15 55, 20 65 L 20 30 Z" fill="#b93b3b"/>
+                <ellipse cx="35" cy="60" rx="4" ry="3" transform="rotate(-18 35 60)" fill="#d18a2a"/>
+                <line x1="39" y1="60" x2="39" y2="35" stroke="#d18a2a" stroke-width="1"/>
+                <ellipse cx="55" cy="50" rx="4" ry="3" transform="rotate(-18 55 50)" fill="#d18a2a"/>
+                <line x1="59" y1="50" x2="59" y2="25" stroke="#d18a2a" stroke-width="1"/>
+                <ellipse cx="75" cy="55" rx="4" ry="3" transform="rotate(-18 75 55)" fill="#4d7a58"/>
+                <line x1="79" y1="55" x2="79" y2="30" stroke="#4d7a58" stroke-width="1"/>
+                <line x1="35" y1="34" x2="79" y2="24" stroke="#d18a2a" stroke-width="1.5"/>
+                <text x="50" y="90" font-family="EB Garamond" font-style="italic" font-size="8" fill="#b93b3b" text-anchor="middle">Bruch, op. 26</text>
+              </svg>
+            </div>
           </div>
 
-          <div class="panel" data-panel="tennis">
-            <dl class="def">
-              <dt>favorite player</dt>
-              <dd>Carlos Alcaraz</dd>
-              <dt>court of choice</dt>
-              <dd>hard</dd>
-              <dt>stroke of choice</dt>
-              <dd>forehand</dd>
-              <dt>the necessary evil</dt>
-              <dd>volleys &mdash; I resent them</dd>
-              <dt>also</dt>
-              <dd>I run</dd>
-            </dl>
+          <div class="panel-card" data-panel="tennis">
+            <div class="panel-body">
+              <dl class="def">
+                <dt>favorite player</dt>
+                <dd>Carlos Alcaraz</dd>
+                <dt>court of choice</dt>
+                <dd>hard</dd>
+                <dt>stroke of choice</dt>
+                <dd>forehand</dd>
+                <dt>the necessary evil</dt>
+                <dd>volleys &mdash; I resent them</dd>
+                <dt>also</dt>
+                <dd>I run</dd>
+              </dl>
+            </div>
+            <div class="panel-illus">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="30" fill="#e4b96a"/>
+                <path d="M20 50 Q 50 20, 80 50" fill="none" stroke="#f8f2e5" stroke-width="2"/>
+                <path d="M20 50 Q 50 80, 80 50" fill="none" stroke="#f8f2e5" stroke-width="2"/>
+                <text x="50" y="94" font-family="EB Garamond" font-style="italic" font-size="8" fill="#4d7a58" text-anchor="middle">hard court</text>
+              </svg>
+            </div>
           </div>
 
-          <div class="panel" data-panel="sweets">
-            <dl class="def">
-              <dt>current obsession</dt>
-              <dd>Arsicault &mdash; SF croissants</dd>
-              <dt>all-time favorite</dt>
-              <dd>Oberweis &mdash; Chicago ice cream</dd>
-              <dt>unpopular opinion</dt>
-              <dd>Nutella is the best flavor, full stop</dd>
-              <dt>more where that came from</dt>
-              <dd><a class="lnk" href="https://beliapp.com/user/aarya4" target="_blank" rel="noopener">Beli &rarr;</a></dd>
-            </dl>
+          <div class="panel-card" data-panel="sweets">
+            <div class="panel-body">
+              <dl class="def">
+                <dt>current obsession</dt>
+                <dd>Arsicault &mdash; SF croissants</dd>
+                <dt>all-time favorite</dt>
+                <dd>Oberweis &mdash; Chicago ice cream</dd>
+                <dt>unpopular opinion</dt>
+                <dd>Nutella is the best flavor, full stop</dd>
+                <dt>more where that came from</dt>
+                <dd><a class="lnk" href="https://beliapp.com/user/aarya4" target="_blank" rel="noopener">Beli &rarr;</a></dd>
+              </dl>
+            </div>
+            <div class="panel-illus">
+              <!-- croissant -->
+              <svg viewBox="0 0 100 100">
+                <path d="M15 60 Q 20 30, 50 25 Q 80 30, 85 60 Q 82 70, 70 68 Q 68 58, 55 55 Q 50 65, 45 55 Q 32 58, 30 68 Q 18 70, 15 60 Z"
+                      fill="#d18a2a" stroke="#b93b3b" stroke-width="0.8"/>
+                <path d="M25 55 Q 35 45, 50 45 Q 65 45, 75 55" fill="none" stroke="#b93b3b" stroke-width="0.5" opacity="0.5"/>
+                <path d="M20 62 Q 40 55, 60 58 Q 78 60, 80 65" fill="none" stroke="#b93b3b" stroke-width="0.5" opacity="0.4"/>
+                <text x="50" y="90" font-family="EB Garamond" font-style="italic" font-size="8" fill="#b93b3b" text-anchor="middle">Arsicault</text>
+              </svg>
+            </div>
           </div>
 
-          <div class="panel" data-panel="places">
-            <p class="places-lede">Places I&rsquo;ve been, or been from.</p>
-            <ul class="places-grid">
-              <li><span class="place">Chicago</span><span class="note">home</span></li>
-              <li><span class="place">Blacksburg, VA</span><span class="note">school</span></li>
-              <li><span class="place">India</span><span class="note">family</span></li>
-              <li><span class="place">Paris</span><span class="note">visited</span></li>
-              <li><span class="place">Switzerland</span><span class="note">visited</span></li>
-              <li><span class="place">Boston</span><span class="note">visited</span></li>
-              <li><span class="place">Washington, D.C.</span><span class="note">visited</span></li>
-              <li><span class="place">Austin, TX</span><span class="note">visited</span></li>
-              <li><span class="place">San Francisco</span><span class="note">visited</span></li>
-            </ul>
+          <div class="panel-card" data-panel="places">
+            <div class="panel-body">
+              <p class="places-lede">Places I&rsquo;ve been, or been from.</p>
+              <ul class="places-grid">
+                <li><span class="place">Chicago</span><span class="note">home</span></li>
+                <li><span class="place">Blacksburg, VA</span><span class="note">school</span></li>
+                <li><span class="place">India</span><span class="note">family</span></li>
+                <li><span class="place">Paris</span><span class="note">visited</span></li>
+                <li><span class="place">Switzerland</span><span class="note">visited</span></li>
+                <li><span class="place">Boston</span><span class="note">visited</span></li>
+                <li><span class="place">Washington, D.C.</span><span class="note">visited</span></li>
+                <li><span class="place">Austin, TX</span><span class="note">visited</span></li>
+                <li><span class="place">San Francisco</span><span class="note">visited</span></li>
+              </ul>
+            </div>
+            <div class="panel-illus">
+              <!-- little map -->
+              <svg viewBox="0 0 100 100">
+                <path d="M20 40 Q 30 30, 45 32 Q 60 40, 75 35 Q 85 45, 80 60 Q 65 68, 50 62 Q 35 68, 20 60 Z"
+                      fill="#9cb597" stroke="#4d7a58" stroke-width="0.8" opacity="0.7"/>
+                <circle cx="35" cy="45" r="2.5" fill="#b93b3b"/>
+                <circle cx="55" cy="50" r="2" fill="#d18a2a"/>
+                <circle cx="70" cy="42" r="1.5" fill="#6b5bd6"/>
+                <circle cx="45" cy="60" r="1.5" fill="#6b5bd6"/>
+                <line x1="35" y1="45" x2="55" y2="50" stroke="#6b5bd6" stroke-width="0.4" stroke-dasharray="2 2"/>
+                <line x1="55" y1="50" x2="70" y2="42" stroke="#6b5bd6" stroke-width="0.4" stroke-dasharray="2 2"/>
+                <text x="50" y="90" font-family="EB Garamond" font-style="italic" font-size="8" fill="#4d7a58" text-anchor="middle">nine cities</text>
+              </svg>
+            </div>
           </div>
 
-          <div class="panel" data-panel="now">
-            <dl class="def">
-              <dt>reading</dt>
-              <dd>the newest Hunger Games</dd>
-              <dt>watching</dt>
-              <dd>Gilmore Girls &middot; Avatar: The Last Airbender</dd>
-              <dt>learning</dt>
-              <dd>&mdash;</dd>
-              <dt>tab open</dt>
-              <dd>&mdash;</dd>
-            </dl>
-            <p class="now-note">Last updated Jul&nbsp;&rsquo;26.</p>
+          <div class="panel-card" data-panel="now">
+            <div class="panel-body">
+              <dl class="def">
+                <dt>reading</dt>
+                <dd>the newest Hunger Games</dd>
+                <dt>watching</dt>
+                <dd>Gilmore Girls &middot; Avatar: The Last Airbender</dd>
+                <dt>learning</dt>
+                <dd>&mdash;</dd>
+                <dt>tab open</dt>
+                <dd>&mdash;</dd>
+              </dl>
+              <p class="now-note">Last updated Jul&nbsp;&rsquo;26.</p>
+            </div>
+            <div class="panel-illus">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#2a7a8a" stroke-width="1.5"/>
+                <line x1="50" y1="50" x2="50" y2="20" stroke="#b93b3b" stroke-width="2" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="70" y2="55" stroke="#1a2d5a" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="2.5" fill="#b93b3b"/>
+                <text x="50" y="92" font-family="EB Garamond" font-style="italic" font-size="7" fill="#2a7a8a" text-anchor="middle">Jul '26</text>
+              </svg>
+            </div>
           </div>
         </div>
       </section>

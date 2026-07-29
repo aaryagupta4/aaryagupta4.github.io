@@ -839,6 +839,32 @@ em { font-style: italic; }
 .pull.small { padding: 16px 22px; }
 .pull.small p { font-size: 20px; }
 
+.music-note {
+  margin: 12px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+.marg-heading {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 9px !important;
+  margin-top: 4px !important;
+}
+
+.marg-link {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  border-bottom: none;
+}
+.marg-link:hover { border-bottom: 1px solid currentColor; }
+
 /* Sweet tooth ----------------------------------------------- */
 .sweet-list .place { color: var(--red); }
 .beli-line {

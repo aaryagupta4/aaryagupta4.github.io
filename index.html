@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aarya Gupta — Computer Engineer</title>
+    <title>Aarya Gupta</title>
     <meta
       name="description"
-      content="Aarya Gupta — Computer Engineering at Virginia Tech. Currently at Refresh (YC W25) working on evaluation for computer-use agents."
+      content="Aarya Gupta — computer engineer at Virginia Tech. Currently at Refresh working on evaluation for computer-use agents."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,400 +16,97 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <!-- TOP NAV -->
-    <nav class="topnav" aria-label="Primary">
-      <div class="topnav-inner">
-        <a class="brand" href="#top">
-          <span class="brand-mark">&#10086;</span>
-          <span class="brand-text">Aarya Gupta</span>
-        </a>
-        <ul class="topnav-links">
-          <li><a href="#about">about</a></li>
-          <li><a href="#experience">experience</a></li>
-          <li><a href="#projects">projects</a></li>
-          <li><a href="#writing">writing</a></li>
-          <li><a href="#personal">personal</a></li>
-        </ul>
-        <ul class="topnav-ext">
-          <li><a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="./resume.pdf" target="_blank" rel="noopener">Résumé</a></li>
-        </ul>
-      </div>
+  <body class="home">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="/">Aarya Gupta</a>
+      <ul class="nav-links">
+        <li><a href="./writing.html">writing</a></li>
+        <li><a href="./projects.html">projects</a></li>
+        <li><a href="./about.html">about</a></li>
+      </ul>
     </nav>
 
-    <span id="top" class="anchor-top"></span>
-
-    <main>
-      <!-- HERO -->
-      <header class="hero">
-        <p class="eyebrow">Blacksburg, Virginia &middot; Virginia Tech &middot; CompE &rsquo;28</p>
+    <main class="home-main">
+      <section class="home-hero">
+        <p class="loc">Blacksburg, Virginia</p>
         <h1>Aarya Gupta</h1>
         <p class="tagline">
-          Computer engineer &mdash; currently at
+          Computer engineer, sophomore at Virginia Tech. Currently at
           <a class="lnk" href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>
-          (YC&nbsp;W25), working on evaluation for computer-use agents.
+          (YC&nbsp;W25) working on evaluation for computer-use agents.
+          Before that, compliance analysis with
+          <a class="lnk" href="./projects.html#spade">Team Astra</a>
+          at VT Aerospace.
         </p>
-        <div class="hero-links">
-          <a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">GitHub &rarr;</a>
-          <a href="https://www.linkedin.com/in/aarya-gupta-929689379" target="_blank" rel="noopener">LinkedIn &rarr;</a>
-          <a href="mailto:aaryasgupta@gmail.com">Email &rarr;</a>
-          <a href="./resume.pdf">Résumé &rarr;</a>
-        </div>
-      </header>
-
-      <!-- ABOUT -->
-      <section id="about" class="section about">
-        <h2 class="section-h">About</h2>
-        <div class="about-body">
-          <p>
-            I&rsquo;m a rising sophomore in Computer Engineering at
-            Virginia Tech, interested in the seam between systems and
-            intelligence &mdash; agent evaluation, ML infrastructure,
-            and aerospace.
-          </p>
-          <p>
-            At <a class="lnk" href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>
-            I author computer-use benchmark tasks end-to-end, write
-            harness code, and sole-author engineering essays on the
-            company blog. Before that I did compliance and safety
-            analysis with <em>Team Astra</em> at VT Aerospace.
-          </p>
-          <p>
-            I read a lot, play violin, and prefer the Romantic era to
-            anything after 1900.
-          </p>
-        </div>
+        <p class="tagline">
+          I write essays about agent evaluation, build tools for
+          myself, and play violin badly enough to have opinions about
+          tuners. Interested in the seam between systems and
+          intelligence &mdash; aerospace, ML infrastructure, and things
+          you can point a scope at.
+        </p>
       </section>
 
-      <!-- EXPERIENCE -->
-      <section id="experience" class="section experience">
-        <h2 class="section-h">Experience</h2>
-        <ol class="exp-list">
-          <li class="exp-item">
-            <div class="exp-head">
-              <div>
-                <h3>Refresh <span class="dim">&middot; YC W25</span></h3>
-                <p class="exp-role">Engineering intern &mdash; benchmark authoring &amp; harness</p>
-              </div>
-              <span class="exp-when">May 2026 &ndash; present</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Authored end-to-end tasks for <em>SoftValBench</em>, the 20-task soft-validation benchmark for computer-use agents. Prompt, sandboxed app setup, deterministic verifier.</li>
-              <li>Sole-authored three engineering essays on the company blog covering <em>SoftValBench</em>, <em>trajectories.sh</em>, and <em>computer-1</em>.</li>
-              <li>Ran 50+ trajectory audits; co-built a clinical-EHR clone used as a CUA training environment; wrote framework code that lives in the repo.</li>
-            </ul>
+      <section class="home-picks">
+        <h2 class="picks-h">Selected</h2>
+        <ul class="picks">
+          <li>
+            <a href="https://refresh.dev/blog/trajectories-blog-post" target="_blank" rel="noopener">
+              <span class="pick-title">Notes on trajectories.sh</span>
+              <span class="pick-meta">essay &middot; refresh.dev &middot; 2026</span>
+            </a>
           </li>
-          <li class="exp-item">
-            <div class="exp-head">
-              <div>
-                <h3>Team Astra <span class="dim">&middot; Virginia Tech Aerospace</span></h3>
-                <p class="exp-role">Compliance &amp; safety analyst (7-person team)</p>
-              </div>
-              <span class="exp-when">Feb 2026 &ndash; May 2026</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Produced compliance analysis and safety documentation for <em>SPADE</em>, an aerospace device concept.</li>
-              <li>Presented in a formal design review to the VT Aerospace department head and faculty. Paper in preparation.</li>
-            </ul>
+          <li>
+            <a href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">
+              <span class="pick-title">On evaluating computer-use agents</span>
+              <span class="pick-meta">essay &middot; refresh.dev &middot; 2026</span>
+            </a>
           </li>
-        </ol>
+          <li>
+            <a href="https://refresh.dev/blog/computer-1" target="_blank" rel="noopener">
+              <span class="pick-title">Introducing computer&#8209;1</span>
+              <span class="pick-meta">essay &middot; refresh.dev &middot; 2026</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://aaryagupta4.github.io/open-strings/" target="_blank" rel="noopener">
+              <span class="pick-title">Open&nbsp;Strings &mdash; a violin tuner</span>
+              <span class="pick-meta">tool &middot; WebAudio &middot; hand-written YIN</span>
+            </a>
+          </li>
+        </ul>
       </section>
 
-      <!-- PROJECTS -->
-      <section id="projects" class="section projects">
-        <h2 class="section-h">Projects</h2>
-        <div class="proj-grid">
-          <article class="proj-card">
-            <div class="proj-thumb proj-thumb-strings" aria-hidden="true">
-              <svg viewBox="0 0 120 60">
-                <line x1="10" y1="15" x2="110" y2="15" />
-                <line x1="10" y1="30" x2="110" y2="30" />
-                <line x1="10" y1="45" x2="110" y2="45" />
-                <line x1="10" y1="60" x2="110" y2="60" />
-                <text x="60" y="10" class="thumb-text">G · D · A · E</text>
-              </svg>
-            </div>
-            <h3>Open Strings</h3>
-            <p class="proj-desc">
-              A browser violin tuner that tunes in perfect fifths, the
-              way string players actually do. YIN pitch detection,
-              hand-implemented; a rolling cent-trail instead of a
-              hunting needle.
-            </p>
-            <ul class="chips">
-              <li>WebAudio</li>
-              <li>JS</li>
-              <li>DSP</li>
-            </ul>
-            <p class="proj-links">
-              <a href="https://aaryagupta4.github.io/open-strings/" target="_blank" rel="noopener">Live</a>
-              <span class="dot">&middot;</span>
-              <a href="https://github.com/aaryagupta4/open-strings" target="_blank" rel="noopener">Source</a>
-            </p>
-          </article>
-
-          <article class="proj-card">
-            <div class="proj-thumb proj-thumb-spade" aria-hidden="true">
-              <svg viewBox="0 0 120 60">
-                <path d="M 60 8 L 90 40 L 60 52 L 30 40 Z" />
-                <line x1="10" y1="56" x2="110" y2="56" />
-              </svg>
-            </div>
-            <h3>SPADE</h3>
-            <p class="proj-desc">
-              An aerospace device. Compliance and safety analysis
-              documentation for the device concept, produced with a
-              seven-person team and presented to the VT Aerospace
-              department.
-            </p>
-            <ul class="chips">
-              <li>Aerospace</li>
-              <li>Compliance</li>
-              <li>Team of 7</li>
-            </ul>
-            <p class="proj-links">
-              <a href="https://docs.google.com/document/d/1pe9Xt8ccitB8u-dxp0PGwnuLL-6YZu1d3t_k9YE3-yA/edit" target="_blank" rel="noopener">Technical paper</a>
-            </p>
-          </article>
-
-          <article class="proj-card proj-forthcoming">
-            <div class="proj-thumb proj-thumb-next" aria-hidden="true">
-              <svg viewBox="0 0 120 60">
-                <circle cx="60" cy="30" r="18" />
-                <text x="60" y="34" class="thumb-text">?</text>
-              </svg>
-            </div>
-            <h3>Forthcoming</h3>
-            <p class="proj-desc">
-              Reserved for the next thing. Currently between drafts.
-            </p>
-            <ul class="chips">
-              <li>&mdash;</li>
-            </ul>
-          </article>
+      <section class="home-links">
+        <div>
+          <p class="linklabel">Explore</p>
+          <ul>
+            <li><a href="./writing.html">Writing &rarr;</a></li>
+            <li><a href="./projects.html">Projects &rarr;</a></li>
+            <li><a href="./about.html">About &rarr;</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="linklabel">Elsewhere</p>
+          <ul>
+            <li><a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">GitHub &rarr;</a></li>
+            <li><a href="https://www.linkedin.com/in/aarya-gupta-929689379" target="_blank" rel="noopener">LinkedIn &rarr;</a></li>
+            <li><a href="./resume.pdf">Résumé &rarr;</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="linklabel">Say hello</p>
+          <ul>
+            <li><a href="mailto:aaryasgupta@gmail.com" class="mono-lnk">aaryasgupta@gmail.com</a></li>
+          </ul>
         </div>
       </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="section skills">
-        <h2 class="section-h">Skills</h2>
-        <div class="skill-groups">
-          <div class="skill-group">
-            <h4>Languages</h4>
-            <ul class="chips">
-              <li>Python</li>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-              <li>C</li>
-              <li>C++</li>
-              <li>Java</li>
-              <li>Bash</li>
-              <li>SQL</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h4>Systems &amp; Tools</h4>
-            <ul class="chips">
-              <li>Linux</li>
-              <li>Docker</li>
-              <li>Git</li>
-              <li>WebAudio</li>
-              <li>Next.js</li>
-              <li>React</li>
-              <li>Node</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h4>Focus areas</h4>
-            <ul class="chips">
-              <li>Agent evaluation</li>
-              <li>Benchmark design</li>
-              <li>DSP</li>
-              <li>Systems engineering</li>
-              <li>Technical writing</li>
-            </ul>
-          </div>
-        </div>
-        <p class="skills-note">
-          Coursework in progress; not yet completed as of Fall 2026:
-          Data Structures &amp; Algorithms, Computer Systems, Computer
-          Architecture, Discrete Math, OOP.
-        </p>
-      </section>
-
-      <div class="fleuron" aria-hidden="true">&#10086;</div>
-
-      <!-- WRITING -->
-      <section id="writing" class="section writing">
-        <h2 class="section-h">Writing</h2>
-        <p class="section-sub">
-          A constellation of published work. Filled stars are live;
-          hollow stars are forthcoming. Hover a star, or tap on mobile.
-        </p>
-
-        <div class="filter-row" role="tablist" aria-label="Filter writing">
-          <button class="filter is-active" role="tab" data-filter="all">All</button>
-          <button class="filter" role="tab" data-filter="cua">Computer&nbsp;Use</button>
-          <button class="filter" role="tab" data-filter="aero">Aerospace</button>
-          <button class="filter" role="tab" data-filter="tools">Tools</button>
-        </div>
-
-        <div class="constellation-wrap">
-          <svg viewBox="0 0 800 480" class="constellation" id="works-constellation" role="img" aria-label="Constellation of published writing">
-            <g class="c-lines">
-              <line x1="140" y1="140" x2="330" y2="230" />
-              <line x1="330" y1="230" x2="150" y2="360" />
-              <line x1="330" y1="230" x2="540" y2="140" />
-              <line x1="540" y1="140" x2="660" y2="300" />
-            </g>
-            <g class="c-stars">
-              <g class="star-node hue-red" data-title="On evaluating computer-use agents" data-meta="essay · refresh.dev · 2026 · sole author" data-href="https://refresh.dev/blog/cua-eval-benchmark" data-tag="cua" tabindex="0" role="link">
-                <circle cx="140" cy="140" r="22" class="halo" />
-                <circle cx="140" cy="140" r="7" class="core" />
-                <text x="140" y="176" class="star-label">SoftValBench</text>
-              </g>
-              <g class="star-node hue-red" data-title="Notes on trajectories.sh" data-meta="essay · refresh.dev · 2026 · sole author" data-href="https://refresh.dev/blog/trajectories-blog-post" data-tag="cua" tabindex="0" role="link">
-                <circle cx="330" cy="230" r="26" class="halo" />
-                <circle cx="330" cy="230" r="9" class="core" />
-                <text x="330" y="270" class="star-label">trajectories.sh</text>
-              </g>
-              <g class="star-node hue-red" data-title="Introducing computer-1" data-meta="essay · refresh.dev · 2026" data-href="https://refresh.dev/blog/computer-1" data-tag="cua" tabindex="0" role="link">
-                <circle cx="150" cy="360" r="18" class="halo" />
-                <circle cx="150" cy="360" r="6" class="core" />
-                <text x="150" y="392" class="star-label">computer-1</text>
-              </g>
-              <g class="star-node hue-sage dim-node" data-title="SPADE — compliance analysis" data-meta="paper · Team Astra · in preparation" data-href="https://docs.google.com/document/d/1pe9Xt8ccitB8u-dxp0PGwnuLL-6YZu1d3t_k9YE3-yA/edit" data-tag="aero" tabindex="0" role="link">
-                <circle cx="540" cy="140" r="20" class="halo" />
-                <circle cx="540" cy="140" r="6" class="core" />
-                <text x="540" y="174" class="star-label">SPADE&nbsp;<tspan class="star-sub">(in prep)</tspan></text>
-              </g>
-              <g class="star-node hue-amber" data-title="Open Strings — a violin tuner" data-meta="tool · aaryagupta4.github.io/open-strings" data-href="https://aaryagupta4.github.io/open-strings/" data-tag="tools" tabindex="0" role="link">
-                <circle cx="660" cy="300" r="20" class="halo" />
-                <circle cx="660" cy="300" r="7" class="core" />
-                <text x="660" y="336" class="star-label">Open&nbsp;Strings</text>
-              </g>
-            </g>
-          </svg>
-
-          <div class="star-readout" id="star-readout" aria-live="polite">
-            <p class="readout-title">Hover a star to read.</p>
-            <p class="readout-meta">Filled = published. Hollow = in preparation.</p>
-            <p class="readout-legend">
-              <span class="legend-swatch legend-red"></span> essays
-              <span class="legend-swatch legend-sage"></span> aerospace
-              <span class="legend-swatch legend-amber"></span> tools
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div class="fleuron" aria-hidden="true">&#10086;</div>
-
-      <!-- PERSONAL — compact horizontal band -->
-      <section id="personal" class="section personal">
-        <h2 class="section-h">Personal</h2>
-        <p class="section-sub">The rest &mdash; briefly.</p>
-
-        <div class="personal-grid">
-          <div class="p-block music-block">
-            <h4>Music</h4>
-            <dl>
-              <dt>on repeat</dt>
-              <dd>&lsquo;Furthest Thing&rsquo; &mdash; Drake</dd>
-              <dt>rotation</dt>
-              <dd>Natalie Jinju, Laufey</dd>
-              <dt>practicing</dt>
-              <dd>Bruch, Violin Concerto No.&nbsp;1 in G minor</dd>
-              <dt>the piece I return to</dt>
-              <dd>Tchaikovsky, Serenade for Strings</dd>
-              <dt>era of choice</dt>
-              <dd>Romantic (Rachmaninoff above all)</dd>
-            </dl>
-            <p class="p-genres">r&amp;b &middot; indie pop &middot; rap</p>
-            <p class="p-link">
-              <a href="https://open.spotify.com/user/wr4onvbwpnmtxewefnymsworw" target="_blank" rel="noopener">Spotify &rarr;</a>
-            </p>
-          </div>
-
-          <div class="p-block tennis-block">
-            <h4>Tennis</h4>
-            <dl>
-              <dt>favorite player</dt>
-              <dd>Carlos Alcaraz</dd>
-              <dt>court of choice</dt>
-              <dd>hard</dd>
-              <dt>stroke of choice</dt>
-              <dd>forehand</dd>
-              <dt>the necessary evil</dt>
-              <dd>volleys</dd>
-            </dl>
-            <p class="p-note">Also: I run.</p>
-          </div>
-
-          <div class="p-block sweets-block">
-            <h4>Sweet tooth</h4>
-            <dl>
-              <dt>current obsession</dt>
-              <dd>Arsicault &mdash; SF croissants</dd>
-              <dt>all-time favorite</dt>
-              <dd>Oberweis &mdash; Chicago ice cream</dd>
-              <dt>unpopular opinion</dt>
-              <dd>Nutella is the best flavor, full stop</dd>
-            </dl>
-            <p class="p-link">
-              <a href="https://beliapp.com/user/aarya4" target="_blank" rel="noopener">Beli &rarr;</a>
-            </p>
-          </div>
-
-          <div class="p-block places-block">
-            <h4>Elsewhere</h4>
-            <p class="p-places">
-              Chicago &middot; Blacksburg &middot; India &middot; Paris &middot;
-              Switzerland &middot; Boston &middot; D.C. &middot; Austin &middot;
-              San&nbsp;Francisco
-            </p>
-          </div>
-
-          <div class="p-block now-block">
-            <h4>Right now</h4>
-            <dl>
-              <dt>reading</dt>
-              <dd>the newest Hunger Games</dd>
-              <dt>watching</dt>
-              <dd>Gilmore Girls &middot; Avatar: TLA</dd>
-              <dt>learning</dt>
-              <dd>&mdash;</dd>
-            </dl>
-            <p class="p-note">Updated Jul&nbsp;&rsquo;26.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="section contact">
-        <h2 class="section-h">Contact</h2>
-        <p class="contact-lede">
-          Reach out about internships, research, or a good book.
-        </p>
-        <div class="contact-row">
-          <a href="mailto:aaryasgupta@gmail.com">aaryasgupta@gmail.com</a>
-          <span class="dot">&middot;</span>
-          <a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">GitHub</a>
-          <span class="dot">&middot;</span>
-          <a href="https://www.linkedin.com/in/aarya-gupta-929689379" target="_blank" rel="noopener">LinkedIn</a>
-          <span class="dot">&middot;</span>
-          <a href="./resume.pdf">Résumé</a>
-        </div>
-      </section>
-
-      <footer class="site-foot">
-        <p>
-          Set in EB Garamond and Inter. Hand-written in
-          Blacksburg,&nbsp;Virginia.
-        </p>
-      </footer>
     </main>
+
+    <footer class="foot">
+      <span class="fleuron">&#10086;</span>
+      <p>Set in EB Garamond and Inter. Blacksburg, Virginia.</p>
+    </footer>
 
     <script src="./script.js" defer></script>
   </body>

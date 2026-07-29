@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Writing — Aarya Gupta</title>
+    <meta name="description" content="A constellation of published writing by Aarya Gupta." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="./">Aarya Gupta</a>
+      <ul class="nav-links">
+        <li><a href="./writing.html" class="is-here">writing</a></li>
+        <li><a href="./projects.html">projects</a></li>
+        <li><a href="./about.html">about</a></li>
+      </ul>
+    </nav>
+
+    <main class="page">
+      <header class="page-head">
+        <p class="crumb"><a href="./">home</a> &nbsp;/&nbsp; writing</p>
+        <h1>Writing</h1>
+        <p class="lede">
+          A constellation of works. Each star is an essay or paper.
+          Filled stars are published; hollow stars are in preparation.
+          Filter by topic below &mdash; or just hover a star and read.
+        </p>
+      </header>
+
+      <div class="filter-row" role="tablist" aria-label="Filter writing">
+        <button class="filter is-active" role="tab" data-filter="all">All</button>
+        <button class="filter" role="tab" data-filter="cua">Computer Use</button>
+        <button class="filter" role="tab" data-filter="aero">Aerospace</button>
+        <button class="filter" role="tab" data-filter="tools">Tools</button>
+      </div>
+
+      <div class="constellation-wrap">
+        <svg viewBox="0 0 800 480" class="constellation" role="img" aria-label="Constellation of writing">
+          <g class="c-lines">
+            <line x1="140" y1="140" x2="330" y2="230" />
+            <line x1="330" y1="230" x2="150" y2="360" />
+            <line x1="330" y1="230" x2="540" y2="140" />
+            <line x1="540" y1="140" x2="660" y2="300" />
+          </g>
+          <g class="c-stars">
+            <g class="star-node hue-red" data-title="On evaluating computer-use agents" data-meta="essay · refresh.dev · 2026 · sole author" data-href="https://refresh.dev/blog/cua-eval-benchmark" data-tag="cua" tabindex="0" role="link">
+              <circle cx="140" cy="140" r="22" class="halo" />
+              <circle cx="140" cy="140" r="7" class="core" />
+              <text x="140" y="176" class="star-label">SoftValBench</text>
+            </g>
+            <g class="star-node hue-red" data-title="Notes on trajectories.sh" data-meta="essay · refresh.dev · 2026 · sole author" data-href="https://refresh.dev/blog/trajectories-blog-post" data-tag="cua" tabindex="0" role="link">
+              <circle cx="330" cy="230" r="26" class="halo" />
+              <circle cx="330" cy="230" r="9" class="core" />
+              <text x="330" y="270" class="star-label">trajectories.sh</text>
+            </g>
+            <g class="star-node hue-red" data-title="Introducing computer-1" data-meta="essay · refresh.dev · 2026" data-href="https://refresh.dev/blog/computer-1" data-tag="cua" tabindex="0" role="link">
+              <circle cx="150" cy="360" r="18" class="halo" />
+              <circle cx="150" cy="360" r="6" class="core" />
+              <text x="150" y="392" class="star-label">computer-1</text>
+            </g>
+            <g class="star-node hue-sage dim-node" data-title="SPADE — compliance analysis" data-meta="paper · Team Astra · in preparation" data-href="https://docs.google.com/document/d/1pe9Xt8ccitB8u-dxp0PGwnuLL-6YZu1d3t_k9YE3-yA/edit" data-tag="aero" tabindex="0" role="link">
+              <circle cx="540" cy="140" r="20" class="halo" />
+              <circle cx="540" cy="140" r="6" class="core" />
+              <text x="540" y="174" class="star-label">SPADE&nbsp;<tspan class="star-sub">(in prep)</tspan></text>
+            </g>
+            <g class="star-node hue-amber" data-title="Open Strings — a violin tuner" data-meta="tool · aaryagupta4.github.io/open-strings" data-href="https://aaryagupta4.github.io/open-strings/" data-tag="tools" tabindex="0" role="link">
+              <circle cx="660" cy="300" r="20" class="halo" />
+              <circle cx="660" cy="300" r="7" class="core" />
+              <text x="660" y="336" class="star-label">Open Strings</text>
+            </g>
+          </g>
+        </svg>
+
+        <div class="star-readout" id="star-readout" aria-live="polite">
+          <p class="readout-title">Hover a star to read.</p>
+          <p class="readout-meta">Filled = published. Hollow = in preparation.</p>
+          <p class="readout-legend">
+            <span class="legend-swatch legend-red"></span> essays
+            <span class="legend-swatch legend-sage"></span> aerospace
+            <span class="legend-swatch legend-amber"></span> tools
+          </p>
+        </div>
+      </div>
+
+      <section class="linear-index">
+        <h2 class="idx-h">All writing</h2>
+        <ol class="idx-list">
+          <li>
+            <a href="https://refresh.dev/blog/trajectories-blog-post" target="_blank" rel="noopener">
+              <span class="idx-date">2026</span>
+              <span class="idx-title">Notes on trajectories.sh</span>
+              <span class="idx-tag tag-red">essay</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">
+              <span class="idx-date">2026</span>
+              <span class="idx-title">On evaluating computer-use agents</span>
+              <span class="idx-tag tag-red">essay</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://refresh.dev/blog/computer-1" target="_blank" rel="noopener">
+              <span class="idx-date">2026</span>
+              <span class="idx-title">Introducing computer&#8209;1</span>
+              <span class="idx-tag tag-red">essay</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://aaryagupta4.github.io/open-strings/" target="_blank" rel="noopener">
+              <span class="idx-date">2026</span>
+              <span class="idx-title">Open Strings &mdash; a violin tuner</span>
+              <span class="idx-tag tag-amber">tool</span>
+            </a>
+          </li>
+          <li class="idx-forth">
+            <a href="https://docs.google.com/document/d/1pe9Xt8ccitB8u-dxp0PGwnuLL-6YZu1d3t_k9YE3-yA/edit" target="_blank" rel="noopener">
+              <span class="idx-date">in&nbsp;prep</span>
+              <span class="idx-title">SPADE compliance analysis</span>
+              <span class="idx-tag tag-sage">paper</span>
+            </a>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span class="fleuron">&#10086;</span>
+      <p>Set in EB Garamond and Inter. Blacksburg, Virginia.</p>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

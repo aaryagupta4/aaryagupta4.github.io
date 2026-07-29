@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — Aarya Gupta</title>
+    <meta name="description" content="Things I've built. Tools, papers, and one aerospace device." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="./">Aarya Gupta</a>
+      <ul class="nav-links">
+        <li><a href="./writing.html">writing</a></li>
+        <li><a href="./projects.html" class="is-here">projects</a></li>
+        <li><a href="./about.html">about</a></li>
+      </ul>
+    </nav>
+
+    <main class="page">
+      <header class="page-head">
+        <p class="crumb"><a href="./">home</a> &nbsp;/&nbsp; projects</p>
+        <h1>Projects</h1>
+        <p class="lede">
+          Things I&rsquo;ve built or contributed to. Filter by kind.
+        </p>
+      </header>
+
+      <div class="filter-row" role="tablist" aria-label="Filter projects">
+        <button class="filter is-active" role="tab" data-proj-filter="all">All</button>
+        <button class="filter" role="tab" data-proj-filter="tool">Tools</button>
+        <button class="filter" role="tab" data-proj-filter="aero">Aerospace</button>
+        <button class="filter" role="tab" data-proj-filter="essay">Essays</button>
+      </div>
+
+      <section class="proj-list">
+        <article class="proj" data-kind="tool">
+          <div class="proj-side">
+            <span class="proj-date">2026</span>
+            <span class="proj-kind kind-amber">Tool</span>
+          </div>
+          <div class="proj-main">
+            <h3>
+              <a href="https://aaryagupta4.github.io/open-strings/" target="_blank" rel="noopener">Open Strings</a>
+              <span class="proj-arrow">&#8599;</span>
+            </h3>
+            <p class="proj-blurb">
+              A browser violin tuner that tunes in perfect fifths &mdash;
+              the way string players actually do it. Written from scratch
+              in WebAudio and vanilla JS, with a hand-implemented YIN
+              pitch detector and a rolling cent-trail instead of a
+              hunting needle.
+            </p>
+            <ul class="chips">
+              <li>WebAudio</li>
+              <li>JavaScript</li>
+              <li>DSP</li>
+              <li>YIN</li>
+            </ul>
+            <p class="proj-links">
+              <a href="https://aaryagupta4.github.io/open-strings/" target="_blank" rel="noopener">Live &rarr;</a>
+              <a href="https://github.com/aaryagupta4/open-strings" target="_blank" rel="noopener">Source &rarr;</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="proj" data-kind="aero" id="spade">
+          <div class="proj-side">
+            <span class="proj-date">2026</span>
+            <span class="proj-kind kind-sage">Aerospace</span>
+          </div>
+          <div class="proj-main">
+            <h3>
+              <a href="https://docs.google.com/document/d/1pe9Xt8ccitB8u-dxp0PGwnuLL-6YZu1d3t_k9YE3-yA/edit" target="_blank" rel="noopener">SPADE</a>
+              <span class="proj-arrow">&#8599;</span>
+            </h3>
+            <p class="proj-blurb">
+              An aerospace device. Compliance and safety analysis
+              documentation for the device concept, produced with a
+              seven-person team (Team&nbsp;Astra) and presented to the VT
+              Aerospace department in a formal design review. Paper in
+              preparation.
+            </p>
+            <ul class="chips">
+              <li>Aerospace</li>
+              <li>Compliance</li>
+              <li>Team of 7</li>
+              <li>Formal DR</li>
+            </ul>
+            <p class="proj-links">
+              <a href="https://docs.google.com/document/d/1pe9Xt8ccitB8u-dxp0PGwnuLL-6YZu1d3t_k9YE3-yA/edit" target="_blank" rel="noopener">Technical paper &rarr;</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="proj" data-kind="essay">
+          <div class="proj-side">
+            <span class="proj-date">2026</span>
+            <span class="proj-kind kind-red">Essay</span>
+          </div>
+          <div class="proj-main">
+            <h3>
+              <a href="https://refresh.dev/blog/trajectories-blog-post" target="_blank" rel="noopener">Notes on trajectories.sh</a>
+              <span class="proj-arrow">&#8599;</span>
+            </h3>
+            <p class="proj-blurb">
+              Sole-authored engineering essay on the open recorder
+              Refresh built for agent runs &mdash; what a trajectory is,
+              what it costs to make one honestly, and why it matters.
+            </p>
+            <ul class="chips">
+              <li>Agent evaluation</li>
+              <li>Technical writing</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="proj" data-kind="essay">
+          <div class="proj-side">
+            <span class="proj-date">2026</span>
+            <span class="proj-kind kind-red">Essay</span>
+          </div>
+          <div class="proj-main">
+            <h3>
+              <a href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">On evaluating computer-use agents</a>
+              <span class="proj-arrow">&#8599;</span>
+            </h3>
+            <p class="proj-blurb">
+              Sole-authored essay introducing SoftValBench, a twenty-task
+              suite for measuring the &lsquo;soft&rsquo; end of computer
+              use &mdash; where success isn&rsquo;t a pixel match but a
+              judgment call.
+            </p>
+            <ul class="chips">
+              <li>CUA</li>
+              <li>Benchmark design</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="proj" data-kind="essay">
+          <div class="proj-side">
+            <span class="proj-date">2026</span>
+            <span class="proj-kind kind-red">Essay</span>
+          </div>
+          <div class="proj-main">
+            <h3>
+              <a href="https://refresh.dev/blog/computer-1" target="_blank" rel="noopener">Introducing computer-1</a>
+              <span class="proj-arrow">&#8599;</span>
+            </h3>
+            <p class="proj-blurb">
+              Sole-authored piece on the computer-1 launch at Refresh.
+            </p>
+            <ul class="chips">
+              <li>CUA</li>
+              <li>Announcement</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span class="fleuron">&#10086;</span>
+      <p>Set in EB Garamond and Inter. Blacksburg, Virginia.</p>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

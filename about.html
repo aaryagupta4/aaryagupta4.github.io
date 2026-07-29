@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Aarya Gupta</title>
+    <meta name="description" content="Aarya Gupta — the fuller version. Music, tennis, sweet-tooth, and where I've been." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="./">Aarya Gupta</a>
+      <ul class="nav-links">
+        <li><a href="./writing.html">writing</a></li>
+        <li><a href="./projects.html">projects</a></li>
+        <li><a href="./about.html" class="is-here">about</a></li>
+      </ul>
+    </nav>
+
+    <main class="page">
+      <header class="page-head">
+        <p class="crumb"><a href="./">home</a> &nbsp;/&nbsp; about</p>
+        <h1>About</h1>
+      </header>
+
+      <section class="prose">
+        <p>
+          I&rsquo;m a rising sophomore in Computer Engineering at
+          Virginia Tech, from Chicago. I write essays about agent
+          evaluation, build small tools when the ones that exist aren&rsquo;t
+          good enough, and think a lot about how to measure whether AI
+          systems are doing what we say they&rsquo;re doing.
+        </p>
+        <p>
+          Right now that means <a class="lnk" href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>,
+          where I&rsquo;m authoring benchmark tasks and writing the
+          engineering blog. Before that I did compliance and safety
+          analysis with a seven-person team at VT Aerospace on an
+          instrument called SPADE. The through-line is a taste for the
+          messy space between systems and intelligence &mdash; aerospace,
+          ML infrastructure, and things you can point a scope at.
+        </p>
+      </section>
+
+      <section class="tabs-section">
+        <div class="tabs" role="tablist" aria-label="About sections">
+          <button class="tab is-active" role="tab" data-tab="music" aria-selected="true">Music</button>
+          <button class="tab" role="tab" data-tab="tennis" aria-selected="false">Tennis</button>
+          <button class="tab" role="tab" data-tab="sweets" aria-selected="false">Sweet tooth</button>
+          <button class="tab" role="tab" data-tab="places" aria-selected="false">Elsewhere</button>
+          <button class="tab" role="tab" data-tab="now" aria-selected="false">Right now</button>
+        </div>
+
+        <div class="panels">
+          <div class="panel is-active" data-panel="music">
+            <dl class="def">
+              <dt>on repeat</dt>
+              <dd>&lsquo;Furthest Thing&rsquo; &mdash; Drake</dd>
+              <dt>in rotation</dt>
+              <dd>Natalie Jinju, Laufey</dd>
+              <dt>currently practicing (violin)</dt>
+              <dd>Bruch, Violin Concerto No.&nbsp;1 in G minor, Op.&nbsp;26</dd>
+              <dt>the piece I return to</dt>
+              <dd>Tchaikovsky, Serenade for Strings in C</dd>
+              <dt>era of choice</dt>
+              <dd>Romantic &mdash; Rachmaninoff above all. The music of ascending.</dd>
+              <dt>genres</dt>
+              <dd>r&amp;b &middot; indie pop &middot; rap</dd>
+              <dt>listen along</dt>
+              <dd><a class="lnk" href="https://open.spotify.com/user/wr4onvbwpnmtxewefnymsworw" target="_blank" rel="noopener">Spotify &rarr;</a></dd>
+            </dl>
+          </div>
+
+          <div class="panel" data-panel="tennis">
+            <dl class="def">
+              <dt>favorite player</dt>
+              <dd>Carlos Alcaraz</dd>
+              <dt>court of choice</dt>
+              <dd>hard</dd>
+              <dt>stroke of choice</dt>
+              <dd>forehand</dd>
+              <dt>the necessary evil</dt>
+              <dd>volleys &mdash; I resent them</dd>
+              <dt>also</dt>
+              <dd>I run</dd>
+            </dl>
+          </div>
+
+          <div class="panel" data-panel="sweets">
+            <dl class="def">
+              <dt>current obsession</dt>
+              <dd>Arsicault &mdash; SF croissants</dd>
+              <dt>all-time favorite</dt>
+              <dd>Oberweis &mdash; Chicago ice cream</dd>
+              <dt>unpopular opinion</dt>
+              <dd>Nutella is the best flavor, full stop</dd>
+              <dt>more where that came from</dt>
+              <dd><a class="lnk" href="https://beliapp.com/user/aarya4" target="_blank" rel="noopener">Beli &rarr;</a></dd>
+            </dl>
+          </div>
+
+          <div class="panel" data-panel="places">
+            <p class="places-lede">Places I&rsquo;ve been, or been from.</p>
+            <ul class="places-grid">
+              <li><span class="place">Chicago</span><span class="note">home</span></li>
+              <li><span class="place">Blacksburg, VA</span><span class="note">school</span></li>
+              <li><span class="place">India</span><span class="note">family</span></li>
+              <li><span class="place">Paris</span><span class="note">visited</span></li>
+              <li><span class="place">Switzerland</span><span class="note">visited</span></li>
+              <li><span class="place">Boston</span><span class="note">visited</span></li>
+              <li><span class="place">Washington, D.C.</span><span class="note">visited</span></li>
+              <li><span class="place">Austin, TX</span><span class="note">visited</span></li>
+              <li><span class="place">San Francisco</span><span class="note">visited</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" data-panel="now">
+            <dl class="def">
+              <dt>reading</dt>
+              <dd>the newest Hunger Games</dd>
+              <dt>watching</dt>
+              <dd>Gilmore Girls &middot; Avatar: The Last Airbender</dd>
+              <dt>learning</dt>
+              <dd>&mdash;</dd>
+              <dt>tab open</dt>
+              <dd>&mdash;</dd>
+            </dl>
+            <p class="now-note">Last updated Jul&nbsp;&rsquo;26.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-block">
+        <h2 class="mini-h">Reach out</h2>
+        <p>
+          Say hello about internships, research, a good book, or the
+          fingering on the Bruch third-movement double-stops.
+        </p>
+        <ul class="contact-links">
+          <li><a href="mailto:aaryasgupta@gmail.com">aaryasgupta@gmail.com</a></li>
+          <li><a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/aarya-gupta-929689379" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="./resume.pdf">Résumé</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span class="fleuron">&#10086;</span>
+      <p>Set in EB Garamond and Inter. Blacksburg, Virginia.</p>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

@@ -16,40 +16,32 @@
   <body>
     <canvas id="stars" aria-hidden="true"></canvas>
 
-    <!-- ASTROLABE: fixed scroll indicator + section nav -->
+    <!-- ASTROLABE nav -->
     <nav class="astrolabe" aria-label="Section navigation">
       <div class="astrolabe-ring">
         <svg viewBox="0 0 100 100" class="astrolabe-svg" aria-hidden="true">
-          <!-- outer ring -->
           <circle cx="50" cy="50" r="46" class="ring-outer" />
           <circle cx="50" cy="50" r="38" class="ring-inner" />
-          <!-- tick marks -->
           <g class="ticks">
             <line x1="50" y1="4"  x2="50" y2="12" />
             <line x1="96" y1="50" x2="88" y2="50" />
             <line x1="50" y1="96" x2="50" y2="88" />
             <line x1="4"  y1="50" x2="12" y2="50" />
           </g>
-          <!-- cardinal marks -->
           <text x="50" y="10" class="cardinal">N</text>
           <text x="93" y="52" class="cardinal">E</text>
           <text x="50" y="94" class="cardinal">S</text>
           <text x="7"  y="52" class="cardinal">W</text>
-          <!-- rotating hand (JS updates rotation via CSS var) -->
-          <line
-            x1="50" y1="50" x2="50" y2="10"
-            class="hand"
-            id="astro-hand"
-          />
+          <line x1="50" y1="50" x2="50" y2="10" class="hand" id="astro-hand" />
           <circle cx="50" cy="50" r="2.5" class="hub" />
         </svg>
         <ul class="astro-nav">
-          <li><a href="#log">I</a></li>
-          <li><a href="#writing">II</a></li>
-          <li><a href="#elsewhere">III</a></li>
-          <li><a href="#violin">IV</a></li>
-          <li><a href="#sport">V</a></li>
-          <li><a href="#now">VI</a></li>
+          <li><a href="#log"      title="the log">I</a></li>
+          <li><a href="#writing"  title="the writing">II</a></li>
+          <li><a href="#projects" title="the projects">III</a></li>
+          <li><a href="#music"    title="the music">V</a></li>
+          <li><a href="#game"     title="the game">VI</a></li>
+          <li><a href="#now"      title="at present">VIII</a></li>
         </ul>
       </div>
     </nav>
@@ -64,7 +56,6 @@
         </p>
         <p class="location">Blacksburg, Virginia &middot; Virginia Tech &middot; CompE &rsquo;28</p>
 
-        <!-- Live star chart of the sky over Blacksburg tonight -->
         <figure class="sky-chart" aria-label="Star chart of the sky over Blacksburg at the current moment">
           <svg viewBox="-110 -110 220 220" class="sky-svg" id="sky-svg" aria-hidden="true">
             <defs>
@@ -73,32 +64,26 @@
                 <stop offset="100%" stop-color="var(--paper-deep)" />
               </radialGradient>
             </defs>
-            <!-- horizon disk -->
             <circle cx="0" cy="0" r="100" class="horizon" fill="url(#sky-fill)" />
-            <!-- altitude rings: 30°, 60° -->
             <circle cx="0" cy="0" r="66.7" class="alt-ring" />
             <circle cx="0" cy="0" r="33.3" class="alt-ring" />
-            <!-- cardinal cross -->
             <line x1="0" y1="-100" x2="0" y2="100" class="cross" />
             <line x1="-100" y1="0" x2="100" y2="0" class="cross" />
             <text x="0" y="-104" class="sky-cardinal">N</text>
             <text x="104" y="4" class="sky-cardinal">E</text>
             <text x="0" y="112" class="sky-cardinal">S</text>
             <text x="-104" y="4" class="sky-cardinal">W</text>
-            <!-- stars + constellation lines drawn by JS into #sky-stars -->
             <g id="sky-lines"></g>
             <g id="sky-stars"></g>
             <text x="0" y="0" id="sky-zenith" class="zenith">&#10059;</text>
           </svg>
-          <figcaption>
-            <span id="sky-caption">sky over Blacksburg, computing&hellip;</span>
-          </figcaption>
+          <figcaption><span id="sky-caption">sky over Blacksburg, computing&hellip;</span></figcaption>
         </figure>
       </header>
 
       <div class="fleuron" aria-hidden="true">&#10086;</div>
 
-      <!-- OPENING with illuminated drop cap -->
+      <!-- OPENING -->
       <section class="chapter opening">
         <div class="body">
           <p class="lede">
@@ -131,7 +116,7 @@
 
       <div class="fleuron" aria-hidden="true">&#10086;</div>
 
-      <!-- LOG -->
+      <!-- I. LOG -->
       <section class="chapter log" data-hue="navy" id="log">
         <header class="chapter-head">
           <span class="numeral">I.</span>
@@ -144,9 +129,8 @@
             <li>
               <time>jul &rsquo;26</time>
               <p>
-                Authored end-to-end tasks for
-                <em>SoftValBench</em>, a computer-use benchmark on
-                soft validation. Sole-authored the
+                Authored end-to-end tasks for <em>SoftValBench</em>, a
+                computer-use benchmark on soft validation. Sole-authored the
                 <a class="link-red" href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">accompanying essay</a>.
               </p>
             </li>
@@ -158,20 +142,9 @@
                 &mdash; the open recorder Refresh built for agent runs.
               </p>
             </li>
-            <li>
-              <time>may &rsquo;26</time>
-              <p>Presented a compliance analysis to the VT Aerospace department as part of a formal design review.</p>
-            </li>
-            <li>
-              <time>feb &rsquo;26</time>
-              <p>
-                Joined <em>Team Astra</em> &mdash; a seven-person study producing compliance and safety documentation for a student aerospace concept. Paper in preparation.
-              </p>
-            </li>
-            <li>
-              <time>aug &rsquo;25</time>
-              <p>Began freshman year at Virginia Tech, CompE.</p>
-            </li>
+            <li><time>may &rsquo;26</time><p>Presented a compliance analysis to the VT Aerospace department as part of a formal design review.</p></li>
+            <li><time>feb &rsquo;26</time><p>Joined <em>Team Astra</em> &mdash; a seven-person study producing compliance and safety documentation for a student aerospace concept. Paper in preparation.</p></li>
+            <li><time>aug &rsquo;25</time><p>Began freshman year at Virginia Tech, CompE.</p></li>
           </ol>
         </div>
 
@@ -187,7 +160,7 @@
 
       <div class="fleuron" aria-hidden="true">&#10086;</div>
 
-      <!-- WRITING: constellation of works -->
+      <!-- II. WRITING -->
       <section class="chapter writing" data-hue="red" id="writing">
         <header class="chapter-head">
           <span class="numeral">II.</span>
@@ -229,7 +202,7 @@
 
             <div class="star-readout" id="star-readout" aria-live="polite">
               <p class="readout-title">Hover a star to read its title.</p>
-              <p class="readout-meta">Or tap on mobile. Filled stars are published; hollow stars are forthcoming.</p>
+              <p class="readout-meta">Filled stars are published; hollow stars are forthcoming.</p>
             </div>
           </div>
         </div>
@@ -245,24 +218,64 @@
 
       <div class="fleuron" aria-hidden="true">&#10086;</div>
 
-      <!-- PLACES -->
-      <section class="chapter places" data-hue="sage" id="elsewhere">
+      <!-- III. PROJECTS -->
+      <section class="chapter projects" data-hue="red" id="projects">
         <header class="chapter-head">
           <span class="numeral">III.</span>
+          <h2>the projects</h2>
+          <p class="chapter-note">things built on my own</p>
+        </header>
+
+        <div class="body">
+          <ul class="project-list">
+            <li>
+              <div class="p-head">
+                <h3>SPADE</h3>
+                <span class="p-tag">?</span>
+              </div>
+              <p class="p-desc">?</p>
+              <p class="p-links">
+                <a class="link-red" href="#">repo &rarr;</a>
+              </p>
+            </li>
+            <li class="p-placeholder">
+              <div class="p-head">
+                <h3>?</h3>
+                <span class="p-tag">?</span>
+              </div>
+              <p class="p-desc">to be built &mdash; see the &lsquo;now&rsquo; notes below</p>
+            </li>
+          </ul>
+          <p class="placeholder-note">
+            Aarya to fill in: SPADE tag (e.g. cli / vis / ml), one-sentence
+            description, and repo URL. Second slot reserved for the
+            build-before-Friday project.
+          </p>
+        </div>
+
+        <aside class="margin">
+          <p><span class="marg-label">count</span> ii</p>
+          <p class="sp"></p>
+          <p class="cross-ref">open&nbsp;source</p>
+          <p class="cross-ref">weekend</p>
+        </aside>
+      </section>
+
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- IV. ELSEWHERE (places) -->
+      <section class="chapter places" data-hue="sage" id="elsewhere">
+        <header class="chapter-head">
+          <span class="numeral">IV.</span>
           <h2>elsewhere</h2>
           <p class="chapter-note">places, in ink</p>
         </header>
 
         <div class="body">
           <ul class="place-list">
-            <li>
-              <span class="place">?</span>
-              <span class="note">to be filled in</span>
-            </li>
+            <li><span class="place">?</span><span class="note">to be filled in</span></li>
           </ul>
-          <p class="placeholder-note">
-            Aarya to fill in: cities lived in / visited, one line each if desired.
-          </p>
+          <p class="placeholder-note">Aarya to fill in: cities lived in / visited, one line each if desired.</p>
         </div>
 
         <aside class="margin">
@@ -275,21 +288,37 @@
 
       <div class="fleuron" aria-hidden="true">&#10086;</div>
 
-      <!-- VIOLIN -->
-      <section class="chapter violin" data-hue="amber" id="violin">
+      <!-- V. MUSIC -->
+      <section class="chapter music" data-hue="amber" id="music">
         <header class="chapter-head">
-          <span class="numeral">IV.</span>
-          <h2>the violin</h2>
-          <p class="chapter-note">a piece I return to</p>
+          <span class="numeral">V.</span>
+          <h2>the music</h2>
+          <p class="chapter-note">listened to &middot; played &middot; loved</p>
         </header>
 
         <div class="body">
-          <blockquote class="pull">
-            <p>?</p>
-            <cite>&mdash; ?</cite>
-          </blockquote>
+          <dl class="music-list">
+            <dt>on repeat</dt>
+            <dd class="music-repeat">
+              <p class="track">?</p>
+              <p class="artist">?</p>
+            </dd>
+            <dt>currently playing<br /><span class="sub">(the violin)</span></dt>
+            <dd>
+              <p class="track">?</p>
+              <p class="artist">?</p>
+            </dd>
+            <dt>the piece I return to</dt>
+            <dd>
+              <blockquote class="pull small">
+                <p>?</p>
+                <cite>&mdash; ?</cite>
+              </blockquote>
+            </dd>
+          </dl>
           <p class="placeholder-note">
-            Aarya to fill in: favorite piece + composer + a couple of sentences on why.
+            Aarya to fill in: album/song on repeat, piece currently being
+            practiced, and all-time favorite piece + composer + a sentence on why.
           </p>
         </div>
 
@@ -298,27 +327,33 @@
           <p><span class="marg-label">key</span> ?</p>
           <p class="sp"></p>
           <p class="cross-ref">classical</p>
-          <p class="cross-ref">practice</p>
+          <p class="cross-ref">on repeat</p>
         </aside>
       </section>
 
       <div class="fleuron" aria-hidden="true">&#10086;</div>
 
-      <!-- SPORT -->
-      <section class="chapter sport" data-hue="sage" id="sport">
+      <!-- VI. THE GAME (tennis) -->
+      <section class="chapter game" data-hue="sage" id="game">
         <header class="chapter-head">
-          <span class="numeral">V.</span>
-          <h2>the sport</h2>
-          <p class="chapter-note">and a fact you didn&rsquo;t need</p>
+          <span class="numeral">VI.</span>
+          <h2>the game</h2>
+          <p class="chapter-note">a racquet, and a fact you didn&rsquo;t need</p>
         </header>
 
         <div class="body">
-          <p class="sport-name">?</p>
-          <p class="fact">
-            <span class="fact-label">fun fact.</span> ?
-          </p>
+          <p class="sport-name">tennis</p>
+          <dl class="mini-list">
+            <dt>favorite player</dt>
+            <dd>?</dd>
+            <dt>court of choice</dt>
+            <dd>?</dd>
+          </dl>
+          <p class="fact"><span class="fact-label">fun fact.</span> ?</p>
           <p class="placeholder-note">
-            Aarya to fill in: the sport, plus one fact most people don&rsquo;t know.
+            Aarya to fill in: favorite tennis player, preferred court
+            surface, and one fact about tennis (or the player) that most
+            people don&rsquo;t know.
           </p>
         </div>
 
@@ -326,30 +361,69 @@
           <p><span class="marg-label">est.</span> ?</p>
           <p class="sp"></p>
           <p class="cross-ref">movement</p>
+          <p class="cross-ref">running</p>
         </aside>
       </section>
 
       <div class="fleuron" aria-hidden="true">&#10086;</div>
 
-      <!-- NOW -->
+      <!-- VII. SWEET TOOTH -->
+      <section class="chapter sweet" data-hue="red" id="sweet">
+        <header class="chapter-head">
+          <span class="numeral">VII.</span>
+          <h2>the sweet tooth</h2>
+          <p class="chapter-note">an incomplete taxonomy</p>
+        </header>
+
+        <div class="body">
+          <ul class="place-list sweet-list">
+            <li><span class="place">?</span><span class="note">current obsession</span></li>
+            <li><span class="place">?</span><span class="note">all-time favorite</span></li>
+            <li><span class="place">?</span><span class="note">unpopular opinion</span></li>
+          </ul>
+          <p class="beli-line">
+            More on where I&rsquo;ve eaten &rarr;
+            <a class="link-red" href="https://beliapp.com/user/aaryagupta" target="_blank" rel="noopener">my Beli</a>.
+          </p>
+          <p class="placeholder-note">
+            Aarya to fill in three sweets: current obsession, all-time
+            favorite, unpopular opinion. Also verify the Beli profile URL
+            (edit the href above to match your actual handle).
+          </p>
+        </div>
+
+        <aside class="margin">
+          <p><span class="marg-label">n</span> iii</p>
+          <p class="sp"></p>
+          <p class="cross-ref">bakery</p>
+          <p class="cross-ref">Beli</p>
+        </aside>
+      </section>
+
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- VIII. AT PRESENT -->
       <section class="chapter now" data-hue="amber" id="now">
         <header class="chapter-head">
-          <span class="numeral">VI.</span>
+          <span class="numeral">VIII.</span>
           <h2>at present</h2>
-          <p class="chapter-note">listening &middot; reading &middot; watching</p>
+          <p class="chapter-note">reading &middot; watching &middot; open in a tab</p>
         </header>
 
         <div class="body">
           <dl class="now-list">
-            <dt>listening</dt>
-            <dd>?</dd>
             <dt>reading</dt>
+            <dd>?</dd>
+            <dt>watching</dt>
             <dd>?</dd>
             <dt>tab open</dt>
             <dd>?</dd>
+            <dt>learning</dt>
+            <dd>?</dd>
           </dl>
           <p class="placeholder-note">
-            Aarya to fill in: one album, one book, one thing on the internet.
+            Aarya to fill in: current book, current show, one interesting
+            open tab, one thing you&rsquo;re currently learning.
           </p>
         </div>
 
@@ -371,6 +445,10 @@
             <span class="label">linkedin</span>
             <span class="value">aarya&#8209;gupta</span>
           </a>
+          <a href="https://beliapp.com/user/aaryagupta" target="_blank" rel="noopener">
+            <span class="label">beli</span>
+            <span class="value">restaurant ledger</span>
+          </a>
           <a href="mailto:aaryasgupta@gmail.com">
             <span class="label">email</span>
             <span class="value">aaryasgupta@gmail.com</span>
@@ -378,6 +456,10 @@
           <a href="./resume.pdf">
             <span class="label">r&eacute;sum&eacute;</span>
             <span class="value">pdf &rarr;</span>
+          </a>
+          <a href="#log">
+            <span class="label">to the top</span>
+            <span class="value">&uarr;</span>
           </a>
         </nav>
 

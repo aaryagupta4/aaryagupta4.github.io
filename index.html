@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Aarya Gupta</title>
-    <meta name="description" content="Aarya Gupta — computer engineer, Virginia Tech." />
+    <meta name="description" content="Aarya Gupta — computer engineer, Virginia Tech. A commonplace book." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -16,149 +16,374 @@
   <body>
     <canvas id="stars" aria-hidden="true"></canvas>
 
+    <!-- ASTROLABE: fixed scroll indicator + section nav -->
+    <nav class="astrolabe" aria-label="Section navigation">
+      <div class="astrolabe-ring">
+        <svg viewBox="0 0 100 100" class="astrolabe-svg" aria-hidden="true">
+          <!-- outer ring -->
+          <circle cx="50" cy="50" r="46" class="ring-outer" />
+          <circle cx="50" cy="50" r="38" class="ring-inner" />
+          <!-- tick marks -->
+          <g class="ticks">
+            <line x1="50" y1="4"  x2="50" y2="12" />
+            <line x1="96" y1="50" x2="88" y2="50" />
+            <line x1="50" y1="96" x2="50" y2="88" />
+            <line x1="4"  y1="50" x2="12" y2="50" />
+          </g>
+          <!-- cardinal marks -->
+          <text x="50" y="10" class="cardinal">N</text>
+          <text x="93" y="52" class="cardinal">E</text>
+          <text x="50" y="94" class="cardinal">S</text>
+          <text x="7"  y="52" class="cardinal">W</text>
+          <!-- rotating hand (JS updates rotation via CSS var) -->
+          <line
+            x1="50" y1="50" x2="50" y2="10"
+            class="hand"
+            id="astro-hand"
+          />
+          <circle cx="50" cy="50" r="2.5" class="hub" />
+        </svg>
+        <ul class="astro-nav">
+          <li><a href="#log">I</a></li>
+          <li><a href="#writing">II</a></li>
+          <li><a href="#elsewhere">III</a></li>
+          <li><a href="#violin">IV</a></li>
+          <li><a href="#sport">V</a></li>
+          <li><a href="#now">VI</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <main>
-      <header class="hero">
-        <p class="eyebrow">a personal atlas</p>
+      <!-- FRONTISPIECE -->
+      <header class="frontispiece">
+        <p class="eyebrow">a commonplace book</p>
         <h1>Aarya&nbsp;Gupta</h1>
-        <div class="rule" aria-hidden="true"></div>
-        <p class="subtitle">
-          computer engineer &middot; virginia tech &middot; class of &rsquo;28
+        <p class="colophon-line">
+          <span>&#10096;</span> computer engineer <span>&#10097;</span>
         </p>
-        <p class="lede">
-          Presently at <a href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>
-          (YC&nbsp;W25), working on evaluation for computer-use agents.
-          Interested in the seam between systems and intelligence &mdash;
-          aerospace, ML infrastructure, and things you can point a scope at.
-        </p>
+        <p class="location">Blacksburg, Virginia &middot; Virginia Tech &middot; CompE &rsquo;28</p>
+
+        <!-- Live star chart of the sky over Blacksburg tonight -->
+        <figure class="sky-chart" aria-label="Star chart of the sky over Blacksburg at the current moment">
+          <svg viewBox="-110 -110 220 220" class="sky-svg" id="sky-svg" aria-hidden="true">
+            <defs>
+              <radialGradient id="sky-fill" cx="0" cy="0" r="1">
+                <stop offset="0%" stop-color="var(--paper-warm)" />
+                <stop offset="100%" stop-color="var(--paper-deep)" />
+              </radialGradient>
+            </defs>
+            <!-- horizon disk -->
+            <circle cx="0" cy="0" r="100" class="horizon" fill="url(#sky-fill)" />
+            <!-- altitude rings: 30°, 60° -->
+            <circle cx="0" cy="0" r="66.7" class="alt-ring" />
+            <circle cx="0" cy="0" r="33.3" class="alt-ring" />
+            <!-- cardinal cross -->
+            <line x1="0" y1="-100" x2="0" y2="100" class="cross" />
+            <line x1="-100" y1="0" x2="100" y2="0" class="cross" />
+            <text x="0" y="-104" class="sky-cardinal">N</text>
+            <text x="104" y="4" class="sky-cardinal">E</text>
+            <text x="0" y="112" class="sky-cardinal">S</text>
+            <text x="-104" y="4" class="sky-cardinal">W</text>
+            <!-- stars + constellation lines drawn by JS into #sky-stars -->
+            <g id="sky-lines"></g>
+            <g id="sky-stars"></g>
+            <text x="0" y="0" id="sky-zenith" class="zenith">&#10059;</text>
+          </svg>
+          <figcaption>
+            <span id="sky-caption">sky over Blacksburg, computing&hellip;</span>
+          </figcaption>
+        </figure>
       </header>
 
-      <section class="log" aria-labelledby="log-heading">
-        <h2 id="log-heading"><span>log</span></h2>
-        <ol class="entries">
-          <li>
-            <time>jul &rsquo;26</time>
-            <div>
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- OPENING with illuminated drop cap -->
+      <section class="chapter opening">
+        <div class="body">
+          <p class="lede">
+            <span class="illum" aria-hidden="true">
+              <svg viewBox="0 0 100 100" class="illum-svg">
+                <rect x="2" y="2" width="96" height="96" class="illum-frame" />
+                <path d="M 2 2 Q 20 18, 2 34 M 98 2 Q 80 18, 98 34 M 2 98 Q 20 82, 2 66 M 98 98 Q 80 82, 98 66" class="illum-vine" />
+                <circle cx="12" cy="12" r="3" class="illum-dot" />
+                <circle cx="88" cy="12" r="3" class="illum-dot" />
+                <circle cx="12" cy="88" r="3" class="illum-dot" />
+                <circle cx="88" cy="88" r="3" class="illum-dot" />
+              </svg>
+              <span class="illum-letter">P</span>
+            </span><span class="illum-rest">resently</span> at
+            <a class="link-red" href="https://refresh.dev" target="_blank" rel="noopener">Refresh</a>
+            (YC&nbsp;W25), working on evaluation for computer-use
+            agents. Interested in the seam between systems and
+            intelligence &mdash; aerospace, ML infrastructure, and
+            things you can point a scope at.
+          </p>
+        </div>
+        <aside class="margin">
+          <p><span class="marg-label">lat.</span> 37.2&deg;&nbsp;N</p>
+          <p><span class="marg-label">lon.</span> 80.4&deg;&nbsp;W</p>
+          <p class="sp"></p>
+          <p><span class="marg-label">now</span> SoftValBench</p>
+          <p><span class="marg-label">next</span> sophomore fall</p>
+        </aside>
+      </section>
+
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- LOG -->
+      <section class="chapter log" data-hue="navy" id="log">
+        <header class="chapter-head">
+          <span class="numeral">I.</span>
+          <h2>the log</h2>
+          <p class="chapter-note">recent entries, in reverse</p>
+        </header>
+
+        <div class="body">
+          <ol class="entries">
+            <li>
+              <time>jul &rsquo;26</time>
               <p>
                 Authored end-to-end tasks for
-                <em>SoftValBench</em>, a computer-use benchmark on soft
-                validation. Sole-authored the
-                <a href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">accompanying essay</a>.
+                <em>SoftValBench</em>, a computer-use benchmark on
+                soft validation. Sole-authored the
+                <a class="link-red" href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">accompanying essay</a>.
               </p>
-            </div>
-          </li>
-          <li>
-            <time>jun &rsquo;26</time>
-            <div>
+            </li>
+            <li>
+              <time>jun &rsquo;26</time>
               <p>
                 Sole-authored an engineering piece on
-                <a href="https://refresh.dev/blog/trajectories-blog-post" target="_blank" rel="noopener"><em>trajectories.sh</em></a>
+                <a class="link-red" href="https://refresh.dev/blog/trajectories-blog-post" target="_blank" rel="noopener"><em>trajectories.sh</em></a>
                 &mdash; the open recorder Refresh built for agent runs.
               </p>
-            </div>
-          </li>
-          <li>
-            <time>may &rsquo;26</time>
-            <div>
+            </li>
+            <li>
+              <time>may &rsquo;26</time>
+              <p>Presented a compliance analysis to the VT Aerospace department as part of a formal design review.</p>
+            </li>
+            <li>
+              <time>feb &rsquo;26</time>
               <p>
-                Presented a compliance analysis to the VT Aerospace
-                department as part of a formal design review.
+                Joined <em>Team Astra</em> &mdash; a seven-person study producing compliance and safety documentation for a student aerospace concept. Paper in preparation.
               </p>
-            </div>
-          </li>
-          <li>
-            <time>feb &rsquo;26</time>
-            <div>
-              <p>
-                Joined <em>Team Astra</em> &mdash; a seven-person study
-                producing compliance and safety documentation for a
-                student aerospace concept. Paper in preparation.
-              </p>
-            </div>
-          </li>
-          <li>
-            <time>aug &rsquo;25</time>
-            <div>
+            </li>
+            <li>
+              <time>aug &rsquo;25</time>
               <p>Began freshman year at Virginia Tech, CompE.</p>
-            </div>
-          </li>
-        </ol>
-      </section>
-
-      <section class="writing" aria-labelledby="writing-heading">
-        <h2 id="writing-heading"><span>writing</span></h2>
-        <ul class="papers">
-          <li>
-            <a href="https://refresh.dev/blog/cua-eval-benchmark" target="_blank" rel="noopener">
-              <h3>On evaluating computer-use agents</h3>
-              <p class="meta">refresh.dev &middot; 2026</p>
-              <p class="excerpt">
-                Introducing SoftValBench &mdash; a twenty-task suite for
-                measuring the &lsquo;soft&rsquo; end of computer use, where
-                success isn&rsquo;t a pixel match but a judgment call.
-              </p>
-            </a>
-          </li>
-          <li>
-            <a href="https://refresh.dev/blog/trajectories-blog-post" target="_blank" rel="noopener">
-              <h3>Notes on trajectories.sh</h3>
-              <p class="meta">refresh.dev &middot; 2026</p>
-              <p class="excerpt">
-                A short field guide to the recorder we ship with every
-                Refresh environment: what a trajectory is, what it costs
-                to make one honestly, and why it matters.
-              </p>
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section class="work" aria-labelledby="work-heading">
-        <h2 id="work-heading"><span>work</span></h2>
-        <div class="entries prose">
-          <article>
-            <h3>Refresh <span class="dim">&middot; YC W25</span></h3>
-            <p>
-              Scope broadened from QA into task authoring, environment
-              engineering, and technical writing. Co-built a
-              clinical-EHR clone used as a training environment; wrote
-              harness code that lives in the repository; ran fifty-plus
-              trajectory audits.
-            </p>
-          </article>
-          <article>
-            <h3>Team Astra <span class="dim">&middot; Virginia Tech</span></h3>
-            <p>
-              Compliance and safety analysis for a student aerospace
-              concept, delivered to the department in a formal design
-              review. arXiv paper in preparation.
-            </p>
-          </article>
+            </li>
+          </ol>
         </div>
+
+        <aside class="margin">
+          <p><span class="marg-label">entries</span> V</p>
+          <p class="sp"></p>
+          <p class="cross-ref">Refresh</p>
+          <p class="cross-ref">Team&nbsp;Astra</p>
+          <p class="cross-ref">VT&nbsp;Aerospace</p>
+          <p class="cross-ref">CompE, &rsquo;28</p>
+        </aside>
       </section>
 
-      <nav class="tiles" aria-label="Links">
-        <a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">
-          <span class="label">github</span>
-          <span class="value">aaryagupta4</span>
-        </a>
-        <a href="https://www.linkedin.com/in/aarya-gupta-929689379" target="_blank" rel="noopener">
-          <span class="label">linkedin</span>
-          <span class="value">aarya&#8209;gupta</span>
-        </a>
-        <a href="mailto:aaryasgupta@gmail.com">
-          <span class="label">email</span>
-          <span class="value">aaryasgupta@gmail.com</span>
-        </a>
-        <a href="./resume.pdf">
-          <span class="label">r&eacute;sum&eacute;</span>
-          <span class="value">pdf &rarr;</span>
-        </a>
-      </nav>
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
 
-      <footer>
-        <p>
+      <!-- WRITING: constellation of works -->
+      <section class="chapter writing" data-hue="red" id="writing">
+        <header class="chapter-head">
+          <span class="numeral">II.</span>
+          <h2>the writing</h2>
+          <p class="chapter-note">a constellation of works &mdash; hover to read</p>
+        </header>
+
+        <div class="body body-full">
+          <div class="filter-row" role="tablist" aria-label="Filter writing">
+            <button class="filter is-active" role="tab" data-filter="all">All</button>
+            <button class="filter" role="tab" data-filter="cua">Computer&nbsp;Use</button>
+            <button class="filter" role="tab" data-filter="aero">Aerospace</button>
+          </div>
+
+          <div class="constellation-wrap">
+            <svg viewBox="0 0 600 300" class="constellation" id="works-constellation">
+              <g class="c-lines">
+                <line x1="120" y1="120" x2="280" y2="180" />
+                <line x1="280" y1="180" x2="440" y2="90" />
+              </g>
+              <g class="c-stars">
+                <g class="star-node" data-title="On evaluating computer-use agents" data-meta="essay · refresh.dev · 2026" data-href="https://refresh.dev/blog/cua-eval-benchmark" data-tag="cua" tabindex="0" role="link">
+                  <circle cx="120" cy="120" r="14" class="halo" />
+                  <circle cx="120" cy="120" r="5" class="core" />
+                  <text x="120" y="150" class="star-label">SoftValBench</text>
+                </g>
+                <g class="star-node" data-title="Notes on trajectories.sh" data-meta="essay · refresh.dev · 2026" data-href="https://refresh.dev/blog/trajectories-blog-post" data-tag="cua" tabindex="0" role="link">
+                  <circle cx="280" cy="180" r="14" class="halo" />
+                  <circle cx="280" cy="180" r="5" class="core" />
+                  <text x="280" y="210" class="star-label">trajectories.sh</text>
+                </g>
+                <g class="star-node dim-node" data-title="Team Astra compliance analysis" data-meta="paper · in preparation" data-href="" data-tag="aero" tabindex="0" role="link">
+                  <circle cx="440" cy="90" r="14" class="halo" />
+                  <circle cx="440" cy="90" r="4" class="core" />
+                  <text x="440" y="120" class="star-label">Team Astra&nbsp;<tspan class="star-sub">(in prep)</tspan></text>
+                </g>
+              </g>
+            </svg>
+
+            <div class="star-readout" id="star-readout" aria-live="polite">
+              <p class="readout-title">Hover a star to read its title.</p>
+              <p class="readout-meta">Or tap on mobile. Filled stars are published; hollow stars are forthcoming.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="margin">
+          <p><span class="marg-label">count</span> iii</p>
+          <p class="sp"></p>
+          <p class="cross-ref">CUA eval</p>
+          <p class="cross-ref">recorders</p>
+          <p class="cross-ref">aerospace</p>
+        </aside>
+      </section>
+
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- PLACES -->
+      <section class="chapter places" data-hue="sage" id="elsewhere">
+        <header class="chapter-head">
+          <span class="numeral">III.</span>
+          <h2>elsewhere</h2>
+          <p class="chapter-note">places, in ink</p>
+        </header>
+
+        <div class="body">
+          <ul class="place-list">
+            <li>
+              <span class="place">?</span>
+              <span class="note">to be filled in</span>
+            </li>
+          </ul>
+          <p class="placeholder-note">
+            Aarya to fill in: cities lived in / visited, one line each if desired.
+          </p>
+        </div>
+
+        <aside class="margin">
+          <p><span class="marg-label">coord.</span> ?&deg;</p>
+          <p class="sp"></p>
+          <p class="cross-ref">travel</p>
+          <p class="cross-ref">home</p>
+        </aside>
+      </section>
+
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- VIOLIN -->
+      <section class="chapter violin" data-hue="amber" id="violin">
+        <header class="chapter-head">
+          <span class="numeral">IV.</span>
+          <h2>the violin</h2>
+          <p class="chapter-note">a piece I return to</p>
+        </header>
+
+        <div class="body">
+          <blockquote class="pull">
+            <p>?</p>
+            <cite>&mdash; ?</cite>
+          </blockquote>
+          <p class="placeholder-note">
+            Aarya to fill in: favorite piece + composer + a couple of sentences on why.
+          </p>
+        </div>
+
+        <aside class="margin">
+          <p><span class="marg-label">opus</span> ?</p>
+          <p><span class="marg-label">key</span> ?</p>
+          <p class="sp"></p>
+          <p class="cross-ref">classical</p>
+          <p class="cross-ref">practice</p>
+        </aside>
+      </section>
+
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- SPORT -->
+      <section class="chapter sport" data-hue="sage" id="sport">
+        <header class="chapter-head">
+          <span class="numeral">V.</span>
+          <h2>the sport</h2>
+          <p class="chapter-note">and a fact you didn&rsquo;t need</p>
+        </header>
+
+        <div class="body">
+          <p class="sport-name">?</p>
+          <p class="fact">
+            <span class="fact-label">fun fact.</span> ?
+          </p>
+          <p class="placeholder-note">
+            Aarya to fill in: the sport, plus one fact most people don&rsquo;t know.
+          </p>
+        </div>
+
+        <aside class="margin">
+          <p><span class="marg-label">est.</span> ?</p>
+          <p class="sp"></p>
+          <p class="cross-ref">movement</p>
+        </aside>
+      </section>
+
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- NOW -->
+      <section class="chapter now" data-hue="amber" id="now">
+        <header class="chapter-head">
+          <span class="numeral">VI.</span>
+          <h2>at present</h2>
+          <p class="chapter-note">listening &middot; reading &middot; watching</p>
+        </header>
+
+        <div class="body">
+          <dl class="now-list">
+            <dt>listening</dt>
+            <dd>?</dd>
+            <dt>reading</dt>
+            <dd>?</dd>
+            <dt>tab open</dt>
+            <dd>?</dd>
+          </dl>
+          <p class="placeholder-note">
+            Aarya to fill in: one album, one book, one thing on the internet.
+          </p>
+        </div>
+
+        <aside class="margin">
+          <p><span class="marg-label">as of</span> ?</p>
+        </aside>
+      </section>
+
+      <div class="fleuron" aria-hidden="true">&#10086;</div>
+
+      <!-- COLOPHON / LINKS -->
+      <footer class="colophon-end">
+        <nav class="tiles" aria-label="Links">
+          <a href="https://github.com/aaryagupta4" target="_blank" rel="noopener">
+            <span class="label">github</span>
+            <span class="value">aaryagupta4</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aarya-gupta-929689379" target="_blank" rel="noopener">
+            <span class="label">linkedin</span>
+            <span class="value">aarya&#8209;gupta</span>
+          </a>
+          <a href="mailto:aaryasgupta@gmail.com">
+            <span class="label">email</span>
+            <span class="value">aaryasgupta@gmail.com</span>
+          </a>
+          <a href="./resume.pdf">
+            <span class="label">r&eacute;sum&eacute;</span>
+            <span class="value">pdf &rarr;</span>
+          </a>
+        </nav>
+
+        <p class="colophon-text">
           Set in EB&nbsp;Garamond and Cormorant. Hand-written in
-          Blacksburg, Virginia.
+          Blacksburg, Virginia. <em>Finis.</em>
         </p>
       </footer>
     </main>
